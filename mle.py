@@ -1,6 +1,6 @@
 import sys
 import os
-sys.path.append(os.environ['HOME']+'/work/mpasview')
+sys.path.append(os.environ['HOME']+'/local/mpasview')
 from mpasview import *
 
 def format_m_to_km(value, tick_number):
@@ -103,7 +103,7 @@ def plot_overview(mpasdata, var, levels, label, tidx=-1, formater=None, bottomde
     cax.set_visible(False)
     cb = plt.colorbar(im1, ax=cax, orientation='horizontal', aspect=25)
     cb.set_label(label)
-    cb.ax.set_xticklabels(cb.ax.get_xticklabels(), rotation=40)
+    cb.ax.tick_params(rotation=40)
     cb.ax.xaxis.set_ticks_position('top')
     cb.ax.xaxis.set_label_position('top')
     if formater:
